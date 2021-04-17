@@ -1,0 +1,44 @@
+@mixin respond($breakpoint) {
+
+  // Small devices (Small Phones, 375px and less) */
+  @if $breakpoint==s-phone {
+    @media only screen and (max-width: 23.4375em) {
+      @content;
+    } // screen is <= 375px / 16px = 23.4375
+  }
+
+  // Small devices (Medium Phones, 576px and less) */
+  @if $breakpoint==l-phone {
+    @media only screen and (max-width: 36.125em) {
+      @content; // screen is <= 576px / 16px = 36em
+    }
+  }
+
+  // Medium devices (Ipad, 992px and less) */
+  @if $breakpoint==ipad {
+    @media only screen and (max-width: 62em) {
+      @content; //screen is <= 992px / 16px = 62em
+    }
+  }
+
+  // Large devices (Ipad Pro, 1024px and less) */
+  @if $breakpoint==ipro {
+    @media only screen and (max-width: 64em) {
+      @content; //screen is <= 1024px / 16px = 64em
+    }
+  }
+
+  //  ( 1280 and less) */
+  @if $breakpoint==s-laptop {
+    @media only screen and (max-width: 80em) {
+      @content; //screen is <= 1280px / 16px = 80em
+    }
+  }
+
+  // Large devices (Laptops,   1440px) */
+  @if $breakpoint==l-laptop {
+    @media only screen and (max-width: 96.25em) {
+      @content; //screen is <= 1540px / 16px = 96.25em
+    }
+  }
+}

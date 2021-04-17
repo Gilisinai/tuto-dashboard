@@ -1,0 +1,131 @@
+/* --------------------
+  HEADLINES PLACEHOLDERS
+----------------- */
+
+%headline-1-fs {
+  font-size: $dsk-headline--1;
+
+  @include respond(s-laptop) {
+    font-size: $lap-headline--1;
+  }
+
+  @include respond(ipro) {
+    font-size: $ipro-headline--1;
+  }
+
+  @include respond(l-phone) {
+    font-size: $mob-headline--1;
+  }
+}
+
+%headline-2-fs {
+  font-size: $dsk-headline--2;
+
+  @include respond(s-laptop) {
+    font-size: $lap-headline--2;
+  }
+
+  @include respond(ipro) {
+    font-size: $ipro-headline--2;
+  }
+
+  @include respond(l-phone) {
+    font-size: $mob-headline--2;
+  }
+}
+
+%article-headline-1-fs {
+  font-size: $dsk-article-headline-1;
+
+  @include respond(s-laptop) {
+    font-size: $lap-article-headline-1;
+  }
+
+  @include respond(ipro) {
+    font-size: $ipro-article-headline-1;
+  }
+
+  @include respond(l-phone) {
+    font-size: $mob-article-headline-1;
+  }
+}
+
+/* --------------------
+    Parahraphs
+----------------- */
+%para-1-fs {
+  font-size: $dsk-article-paragraph-1;
+
+  @include respond(s-laptop) {
+    font-size: $lap-article-paragraph-1;
+  }
+
+  @include respond(ipro) {
+    font-size: $ipro-article-paragraph-1;
+  }
+
+  @include respond(l-phone) {
+    font-size: $mob-article-paragraph-1;
+  }
+}
+
+%para-2-fs {
+  font-size: $dsk-article-paragraph-2;
+
+  @include respond(s-laptop) {
+    font-size: $lap-article-paragraph-2;
+  }
+
+  @include respond(ipro) {
+    font-size: $ipro-article-paragraph-2;
+  }
+
+  @include respond(l-phone) {
+    font-size: $mob-article-paragraph-2;
+  }
+}
+
+
+%fs-handler {
+  /* --------------------
+      HEADLINES
+  ----------------- */
+
+  & *[class*="-h--1"] {
+    @extend %headline-1-fs;
+  }
+
+  & *[class*="-h--2"] {
+    @extend %headline-1-fs;
+  }
+
+  /* --------------------
+      Article Headlines
+  ----------------- */
+  & *[class*="-ah--1"] {
+    @extend %article-headline-1-fs;
+  }
+
+  /* --------------------
+      Paragraphs
+  ----------------- */
+  & *[class*="-p--"] {
+    line-height: 1.5;
+  }
+
+  & *[class*="-p--1"] {
+    @extend %para-1-fs;
+  }
+
+  & *[class*="-p--2"] {
+    @extend %para-2-fs;
+  }
+
+}
+
+div,
+section,
+article {
+  @extend %fs-handler;
+}
+

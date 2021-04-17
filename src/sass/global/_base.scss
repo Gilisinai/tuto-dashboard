@@ -1,0 +1,38 @@
+*{
+  margin: 0; padding: 0;
+}
+
+*,
+*::after,
+*::before {
+  box-sizing: inherit;
+}
+
+html {
+  // This defines what 1rem is
+  font-size: 62.5%; //1 rem = 10px; 10px/16px = 62.5%
+
+  @include respond(l-laptop) {
+    font-size: 45.25%;
+  }
+
+  @include respond(ipro){ // width <= 1024px ?
+      font-size: 56.25%; // 1rem = 9px, 9/16 = 56.25
+  }
+  
+  @include respond(ipad){// width <= 992px ?
+      font-size: 50%; // 1rem = 8px, 8/16 = 50
+  }
+}
+
+body {
+  box-sizing: border-box;
+  line-height: 1.2;
+  font-family: $text-font;
+}
+
+img {
+  max-width: 100%;
+  width: 100%;
+  height: auto;
+}
